@@ -379,7 +379,7 @@ strong {
   width: 46vw;
   max-width: 620px;
   height: 90%;
-  background: url("../Assets/logobranca.png") no-repeat right bottom;
+  background: url("Assets/logobranca.png") no-repeat right bottom;
   background-size: contain;
   opacity: 0.04;
   pointer-events: none;
@@ -681,7 +681,7 @@ strong {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../Assets/iconsbranco.png");
+  background-image: url("Assets/iconsbranco.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
