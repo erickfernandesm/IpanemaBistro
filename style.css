@@ -1017,6 +1017,15 @@ strong {
   }
   .hero {
     min-height: 92vh;
+    padding-top: calc(var(--header-h) + 16px);
+    padding-bottom: 90px;
+    box-sizing: border-box;
+  }
+  .hero__eyebrow {
+    margin-bottom: 16px;
+  }
+  .hero__scroll {
+    bottom: 18px;
   }
   .footer__grid {
     grid-template-columns: 1fr;
