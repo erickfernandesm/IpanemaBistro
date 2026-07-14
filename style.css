@@ -10,9 +10,6 @@
   --ink: #1C2433;
   --muted: #5B6473;
   --white: #ffffff;
-  --br-green: #009C3B;
-  --br-yellow: #FFDF00;
-  --br-blue: #002776;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Jost", -apple-system, "Segoe UI", sans-serif;
   --container: 1200px;
@@ -238,7 +235,7 @@ strong {
   transition: color 0.25s ease;
 }
 
-.nav a:not(.nav-cta)::after {
+.nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -249,50 +246,12 @@ strong {
   transition: width 0.28s ease;
 }
 
-.nav a:not(.nav-cta):hover::after {
+.nav a:hover::after {
   width: 100%;
 }
 
-.nav a:not(.nav-cta):hover {
+.nav a:hover {
   color: var(--orange-soft);
-}
-
-.nav-cta {
-  color: #fff !important;
-}
-
-.nav-cta--copa {
-  background: var(--br-yellow);
-  color: var(--br-blue) !important;
-  padding: 11px 22px;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-}
-
-.nav-cta--copa::after {
-  display: none !important;
-}
-
-.nav-cta--copa:hover {
-  background: #ffe838;
-  transform: translateY(-2px);
-  color: var(--br-blue) !important;
-}
-
-.nav-cta__ball {
-  display: inline-block;
-  font-size: 1rem;
-  animation: navBall 1.4s ease-in-out infinite;
-}
-
-@keyframes navBall {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-4px) rotate(180deg);
-  }
 }
 
 .site-header.scrolled {
@@ -314,16 +273,8 @@ strong {
   color: var(--navy);
 }
 
-.site-header.scrolled .nav a:not(.nav-cta):hover {
+.site-header.scrolled .nav a:hover {
   color: var(--orange);
-}
-
-.site-header.scrolled .nav-cta {
-  color: #fff !important;
-}
-
-.site-header.scrolled .nav-cta--copa {
-  color: var(--br-blue) !important;
 }
 
 .site-header.scrolled .nav-toggle span {
@@ -667,51 +618,6 @@ strong {
   align-self: flex-start;
 }
 
-.copa {
-  position: relative;
-  color: var(--white);
-  text-align: center;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(232, 119, 34, 0.35), transparent 50%),
-    linear-gradient(135deg, var(--navy) 0%, var(--navy-darker) 100%);
-  overflow: hidden;
-}
-
-.copa::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("Assets/iconsbranco.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70%;
-  opacity: 0.05;
-}
-
-.copa__content {
-  position: relative;
-  z-index: 2;
-  max-width: 780px;
-}
-
-.copa__title {
-  color: var(--white);
-  margin-bottom: 22px;
-}
-
-.copa__sub {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.1rem;
-  margin-bottom: 36px;
-}
-
-.copa__cta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .eventos {
   background: var(--cream);
 }
@@ -730,6 +636,77 @@ strong {
   gap: 14px;
   flex-wrap: wrap;
   margin-top: 28px;
+}
+
+.personal-chef {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+}
+
+.personal-chef .grid-2 {
+  align-items: stretch;
+}
+
+.chef__media {
+  display: flex;
+}
+
+.chef__media .media-photo {
+  height: 100%;
+  max-height: none;
+}
+
+.chef__text h2 {
+  margin-bottom: 24px;
+}
+
+.chef__text > p {
+  margin-bottom: 30px;
+  max-width: 520px;
+}
+
+.chef__services {
+  display: grid;
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.chef__services li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.chef__service-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.5px solid rgba(232, 119, 34, 0.35);
+  font-size: 1.3rem;
+  box-shadow: 0 6px 16px rgba(14, 42, 82, 0.06);
+}
+
+.chef__services h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.chef__services p {
+  font-size: 0.95rem;
+  max-width: 440px;
+}
+
+.chef__cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .ambiente {
@@ -982,9 +959,6 @@ strong {
   .site-header.scrolled .nav a {
     color: #fff;
   }
-  .nav-cta {
-    margin-top: 10px;
-  }
   .nav-toggle {
     z-index: 1100;
   }
@@ -1035,13 +1009,12 @@ strong {
     text-align: center;
   }
   .hero__cta,
-  .copa__cta,
   .reservas__cta,
-  .eventos__cta {
+  .eventos__cta,
+  .chef__cta {
     flex-direction: column;
   }
   .hero__cta .btn,
-  .copa__cta .btn,
   .reservas__cta .btn {
     width: 100%;
     justify-content: center;
